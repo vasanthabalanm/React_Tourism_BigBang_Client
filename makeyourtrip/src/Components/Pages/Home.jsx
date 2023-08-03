@@ -1,18 +1,28 @@
 import React from 'react'
 import './Home.css'
 import image1 from '../../images/banner.png'
-const Home =() =>{
+import flight from '../../images/flight.png'
+import Navbar from '../Navbar/Navbar'
+const Home = () => {
   return (
     <div>
+      <Navbar />
+      <div className='sec1'>
         <div className='combine'>
-            <div>
-                <p className='mainhead'>Explore the world!</p>
-                <p>"Welcome to our travel website, your gateway to unforgettable adventures and remarkable destinations worldwide."</p>
-            </div>
-            <div className='Circle1'>
-                <img src={image1} alt="" className='image1' />
-            </div>
+          <div>
+            <p className='mainhead'>Explore <img src={flight} alt="" className='flight' /> <br></br> The World!</p>
+
+            <br />
+            <p className='submainhead'>"Welcome to our travel website, your gateway to unforgettable adventures <br></br>remarkable destinations worldwide."</p>
+            <br />
+            <button className='readmore'>Read More</button>
+          </div>
+          <div className='Circle1'>
+            <img src={image1} alt="" className='image1' />
+          </div>
         </div>
+      </div>
+
     </div>
   )
 }

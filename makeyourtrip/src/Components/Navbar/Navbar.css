@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 
 .navbar {
@@ -23,8 +23,7 @@
     color: black;
     font-weight: 700;
     font-size: 1.2rem;
-    margin-top: 12px;
-    margin-left: 2px;
+    margin-left: 10px;
 }
 
 .navbar-toggle {
@@ -80,10 +79,11 @@
   top: 80px;
   left: 20px;
   background-color: white;
-  color: #F24E1E;
+  color: black;
   padding: 20px;
-  width: 200px;
-  z-index: 1;
+  z-index: 2;
+  margin-left: -15px;
+  width: 400px;
 }
 
 .navbar-links li {
@@ -102,16 +102,18 @@
   text-decoration: underline;
 }
 .register{
-    background-color: #F24E1E;
+    background-color: #FA914B;
     color: #fff;
     border-style: none;
     border-radius: 5px;
     padding: 5px;
     width: 100px;
+    height: 30px;
+    margin-top: -4px;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   .navbar-links {
       display: none;
   }
@@ -119,4 +121,20 @@
   .navbar-toggle {
       display: flex;
   }
+  
+}
+
+@media (max-width:540px){
+    .navbar-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 60px;
+        background-color: white;
+        color: black;
+        padding: 20px;
+        z-index: 2;
+        width: 400px;
+      }
 }
