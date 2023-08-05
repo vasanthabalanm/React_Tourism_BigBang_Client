@@ -1,0 +1,12 @@
+.packhead{
+    font-size: 25px;
+    font-weight: 700;
+}
+.packs{
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.allpacks{
+    margin-top: 40px;
+}

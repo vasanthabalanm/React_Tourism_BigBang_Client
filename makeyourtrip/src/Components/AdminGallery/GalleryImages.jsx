@@ -105,13 +105,22 @@ export default function GalleryImages(props) {
                                 value={values.locationName}
                                 onChange={handleInputChange} />
                         </div>
-                        <div className="form-group">
-                            <input className="form-control" placeholder="Location Description" name="locationdescription"
+                        {/* <div className="form-group">
+                            <input type='textarea' className="form-control" placeholder="Location Description" name="locationdescription"
                                 value={values.locationdescription}
                                 onChange={handleInputChange} />
+                        </div> */}
+                        <div className="form-group">
+                            <textarea
+                                className="form-control"
+                                placeholder="Location Description"
+                                name="locationdescription"
+                                value={values.locationdescription}
+                                onChange={handleInputChange}
+                            />
                         </div>
                         <div className="form-group text-center">
-                            <button type="submit" className="btn btn-light">Submit</button>
+                            <button type="submit" className="btn submitimage">Submit</button>
                         </div>
                     </div>
                 </div>

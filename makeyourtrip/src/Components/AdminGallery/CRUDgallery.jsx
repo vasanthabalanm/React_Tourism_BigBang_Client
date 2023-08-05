@@ -70,10 +70,10 @@ function CRUDgallery() {
         <h5>{data.locationName}</h5>
         <span className="locationdesc">{data.locationdescription}</span> <br />
         <button
-          className="btn btn-light delete-button"
+          className="btn btn-danger"
           onClick={e => onDelete(e, parseInt(data.adminImgsId))}
         >
-          <i className="far fa-trash-alt"></i>
+          <i className="far fa-trash-alt" style={{color:'white'}}></i>
         </button>
       </div>
     </div>
@@ -81,17 +81,10 @@ function CRUDgallery() {
 
   return (
     <div className="row">
-      <div className="col-md-12">
-        <div className="jumbotron jumbotron-fluid py-4">
-          <div className="container text-center detls">
-            <h1 className="display-4">Add/Edit - Location Details</h1>
-          </div>
-        </div>
-      </div>
       <div className="col-md-4">
         <GalleryImages addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
       </div>
-      <div className="col-md-8">
+      <div className="col">
         <table>
           <tbody>
             {galleryList.map((data, i) => (

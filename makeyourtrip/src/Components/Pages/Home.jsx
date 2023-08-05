@@ -3,6 +3,8 @@ import './Home.css'
 import image1 from '../../images/banner.png'
 import flight from '../../images/flight.png'
 import Navbar from '../Navbar/Navbar'
+import Accomodation from './Accomodation'
+import OffersPackage from './OffersPackage'
 const Home = () => {
   return (
     <div>
@@ -15,14 +17,18 @@ const Home = () => {
             <br />
             <p className='submainhead'>"Welcome to our travel website, your gateway to unforgettable adventures <br></br>remarkable destinations worldwide."</p>
             <br />
-            <button className='readmore'>Read More</button>
+            <button className='readmore'>Explore Guides</button>
           </div>
           <div className='Circle1'>
             <img src={image1} alt="" className='image1' />
           </div>
         </div>
       </div>
+      {/* offerpackage */}
+      <OffersPackage/>
 
+      {/* accommodations */}
+      <Accomodation/>
     </div>
   )
 }

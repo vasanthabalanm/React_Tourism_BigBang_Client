@@ -100,6 +100,10 @@
 .navbar-links a:hover {
   color: #F24E1E;
   text-decoration: underline;
+} 
+ul li .fedbck:hover{
+  color: #F24E1E;
+
 }
 .login,.register{
     background-color: #FA914B;

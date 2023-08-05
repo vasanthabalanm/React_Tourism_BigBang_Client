@@ -34,7 +34,7 @@ const Navbar =() => {
                     Packages
                 </li>
                 <li>
-                    <Link to={'/feedback'}>Feedback</Link>
+                    <Link to={'/feedback'}><p className="fedbck" style={{color:'black'}}>Feedback</p></Link>
                 </li>
                 <li>
                 <Link to={'/login'}><button className='login'>Log-In</button></Link>

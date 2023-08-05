@@ -56,9 +56,9 @@
   border: 2px solid #FA914B;
   background: white;
   color: black;
-  padding: 12px;
+  padding: 10px;
   border-radius: 5px;
-  width: 120px;
+  width: 150px;
   cursor: pointer;
   animation-name: slideUp;
   animation-duration: 2s;
