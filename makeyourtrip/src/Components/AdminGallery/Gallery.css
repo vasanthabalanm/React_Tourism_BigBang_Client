@@ -1,0 +1,14 @@
+.postimg{
+    width: 300px;
+    height: 500px;
+    margin: 50px;
+}
+.getimg {
+    width: 800px; 
+    height: auto; 
+    margin: 5px;
+  }
+  .locationdesc{
+    overflow-y: auto;
+    max-height: 100px;
+  }

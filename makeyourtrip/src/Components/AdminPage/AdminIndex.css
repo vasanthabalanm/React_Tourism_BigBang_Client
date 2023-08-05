@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 
 .navbar {
@@ -12,18 +12,15 @@
 
 }
 
-.combine{
-    display: flex;
+.image-logo{
+  height: 90px;
 }
-.logo{
-    width: 50px;
-    height: 50px;
-}
-.brandname{
-    color: black;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-left: 10px;
+
+.navbar-logo img {
+  /* margin-left: -100px; */
+  border-radius: 15px;
+  width: 90px;
+  height: auto;
 }
 
 .navbar-toggle {
@@ -67,7 +64,7 @@
 }
 
 .navbar-links li:hover{
-  color: #F24E1E;
+  color: red;
   transform: scale(1.1);
   transition: 0.1s all;
 }
@@ -81,9 +78,8 @@
   background-color: white;
   color: black;
   padding: 20px;
-  z-index: 2;
-  margin-left: -15px;
-  width: 400px;
+  width: 200px;
+  z-index: 1;
 }
 
 .navbar-links li {
@@ -93,32 +89,17 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   transition: color 0.2s;
 }
 
 .navbar-links a:hover {
-  color: #F24E1E;
-  text-decoration: underline;
-}
-.login,.register{
-    background-color: #FA914B;
-    color: #fff;
-    border-style: none;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
-    height: 30px;
-    margin-top: -4px;
-}
-
-.login:hover,.register:hover{
-  background-color: #FA914B;
   color: #fff;
+  text-decoration: underline;
 }
 
 /* Responsive Styles */
-@media (max-width: 940px) {
+@media (max-width: 768px) {
   .navbar-links {
       display: none;
   }
@@ -126,20 +107,64 @@
   .navbar-toggle {
       display: flex;
   }
-  
 }
 
-@media (max-width:540px){
-    .navbar-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 60px;
-        background-color: white;
-        color: black;
-        padding: 20px;
-        z-index: 2;
-        width: 400px;
-      }
+
+
+.leftnav{
+    background-color: rgb(206, 240, 240);
+    height: 800px;
+    width: 250px;
+    border-radius: 5px 25px 20px;
+    position: fixed;
+}
+
+
+.totaldiv{
+    font-size: 15px;
+    
+}
+
+.totaldiv div{
+    padding: 20px 15px 30px;
+    cursor: pointer;
+}
+
+
+
+.approvallist{
+    margin-left: 300px;
+ 
+}
+
+/* Add responsive CSS for tables */
+.approvallist {
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* Add media query for responsive table */
+@media screen and (max-width: 768px) {
+    .table {
+        width: 100%;
+        max-width: 100%;
+        overflow: auto;
+    }
 }

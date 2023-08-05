@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './Navbar.css'
 import image1 from '../../images/logo1.png'
+import { Link } from 'react-router-dom';
 
 const Navbar =() => {
     const [showbar, setShowbar] = useState(false);
@@ -33,7 +34,7 @@ const Navbar =() => {
                     Packages
                 </li>
                 <li>
-                <button className='register'>Sign-up</button>
+                <Link to={'/login'}><button className='login'>Log-In</button></Link>
                 </li>
             </ul>
             

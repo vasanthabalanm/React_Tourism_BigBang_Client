@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';import './Userregister.css'
-import { useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import './AgentRegister.css'
 
-const Userregister =() =>{
+const Agentregister =() => {
     const [userDTO, setUserDTO] = useState({
         name: '',
         username: '',
         email: '',
         phone: '',
-        role: 'User',
+        role: 'Agent',
         password: ''
     });
-    const usenavigate = useNavigate();
     const [success, setSuccess] = useState(false);
     const [errors, setErrors] = useState({});
 
@@ -25,7 +24,7 @@ const Userregister =() =>{
         }
         if (!userDTO.phone) {
             newErrors.phone = 'Phone Number is required';
-        } else if (!/^\d{10}$/.test(userDTO.phone)) {
+        } else if (!/^\d+$/.test(userDTO.phone)) {
             newErrors.phone = 'Only numbers are allowed';
         }
         if (!userDTO.username) {
@@ -49,7 +48,7 @@ const Userregister =() =>{
     const register = () => {
         if (validateForm()) {
             console.log(userDTO);
-            fetch('https://localhost:7117/api/AdminUser/register', {
+            fetch('https://localhost:7050/api/TravelAgent', {
                 method: 'POST',
                 headers: {
                     'accept': 'text/plain',
@@ -62,7 +61,6 @@ const Userregister =() =>{
                     var user = await data.json();
                     setSuccess(true);
                     toast.success('Registered successfully!');
-                    usenavigate('/');
                 } else {
                     toast.error('Warning !');
                 }
@@ -72,14 +70,14 @@ const Userregister =() =>{
 
     return (
         <div className="user-register-container">
-            <div className="user-register-title">User Register</div>
+            <div className="user-register-title">Agent Registration</div>
             <div className="input-container">
                 <TextField
                     sx={{
                         width: '350px',
                         fontSize: '18px'
                     }}
-                    label="Full Name"
+                    label="Agency Name"
                     variant="outlined"
                     value={userDTO.name}
                     onChange={(event) => setUserDTO({ ...userDTO, name: event.target.value })}
@@ -151,7 +149,6 @@ const Userregister =() =>{
             {success && <div className="success">Registered successfully!</div>}
         </div>
     );
-
 }
 
-export default Userregister
+export default Agentregister
