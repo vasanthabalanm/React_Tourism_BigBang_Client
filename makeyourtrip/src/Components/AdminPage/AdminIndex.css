@@ -12,15 +12,12 @@
 
 }
 
-.image-logo{
-  height: 90px;
+.combine{
+    display: flex;
 }
-
-.navbar-logo img {
-  /* margin-left: -100px; */
-  border-radius: 15px;
-  width: 90px;
-  height: auto;
+.logo{
+    width: 50px;
+    height: 50px;
 }
 
 .navbar-toggle {
@@ -112,10 +109,10 @@
 
 
 .leftnav{
-    background-color: rgb(206, 240, 240);
+    background-color: #FA914B;
+    color: white;
     height: 800px;
     width: 250px;
-    border-radius: 5px 25px 20px;
     position: fixed;
 }
 

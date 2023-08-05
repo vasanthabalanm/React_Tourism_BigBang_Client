@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';import './Userregister.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Userregister =() =>{
     const [userDTO, setUserDTO] = useState({
@@ -38,9 +38,12 @@ const Userregister =() =>{
         }
         if (!userDTO.password) {
             newErrors.password = 'Password is required';
-        } else if (userDTO.password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters';
-        }
+          } else if (userDTO.password.length < 8) {
+            newErrors.password = 'Password must be at least 8 characters long';
+          } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(userDTO.password)) {
+            newErrors.password = 'Password must contain at least one special character (!@#$%^&*()_+{}[]:;<>,.?~-)';
+          }
+          
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -147,6 +150,9 @@ const Userregister =() =>{
                 <Button variant="contained" color="primary" onClick={register}>
                     Register
                 </Button>
+                {/* <Link to={'/agentregister'}><button className='login'>Agentregister</button></Link> */}
+
+                <Link to={'/agentregister'}>Agentregister</Link>
             </div>
             {success && <div className="success">Registered successfully!</div>}
         </div>

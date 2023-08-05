@@ -3,32 +3,45 @@ import { TextField, Button } from '@mui/material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './AgentRegister.css'
+import { useNavigate } from 'react-router-dom';
 
-const Agentregister =() => {
+
+const Agentregister = () => {
     const [userDTO, setUserDTO] = useState({
-        name: '',
         username: '',
         email: '',
+        password: '',
         phone: '',
-        role: 'Agent',
-        password: ''
+        aadharnumber: '',
+        agencyName: '',
+        role:'TravelAgent',
+        agencyDescription: ''
     });
     const [success, setSuccess] = useState(false);
     const [errors, setErrors] = useState({});
+    const navigat = useNavigate();
 
     const validateForm = () => {
         const newErrors = {};
-
-        if (!userDTO.name) {
-            newErrors.name = 'Name is required';
+        if (!userDTO.agencyName) {
+            newErrors.agencyName = 'AgencyName is required';
         }
+        
+         if (!userDTO.aadharnumber) {
+            newErrors.aadharnumber = 'AadharNumber is required';
+        } else if (!/^\d{12}$/.test(userDTO.aadharnumber)) {
+            newErrors.aadharnumber = 'Only 12 numbers are allowed';
+        }
+       
+
         if (!userDTO.phone) {
             newErrors.phone = 'Phone Number is required';
-        } else if (!/^\d+$/.test(userDTO.phone)) {
-            newErrors.phone = 'Only numbers are allowed';
+        } else if (!/^\d{10}$/.test(userDTO.phone)) {
+            newErrors.phone = 'Only 10 numbers are allowed';
         }
-        if (!userDTO.username) {
-            newErrors.username = 'Username is required';
+        
+        if (!userDTO.agencyDescription) {
+            newErrors.agencyDescription = 'AgencyDescription is required';
         }
         if (!userDTO.email) {
             newErrors.email = 'Email is required';
@@ -37,8 +50,10 @@ const Agentregister =() => {
         }
         if (!userDTO.password) {
             newErrors.password = 'Password is required';
-        } else if (userDTO.password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters';
+        } else if (userDTO.password.length < 8) {
+            newErrors.password = 'Password must be at least 8 characters long';
+        } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(userDTO.password)) {
+            newErrors.password = 'Password must contain at least one special character (!@#$%^&*()_+{}[]:;<>,.?~-)';
         }
 
         setErrors(newErrors);
@@ -48,7 +63,7 @@ const Agentregister =() => {
     const register = () => {
         if (validateForm()) {
             console.log(userDTO);
-            fetch('https://localhost:7050/api/TravelAgent', {
+            fetch('https://localhost:7117/api/TravelAgentRegister/register', {
                 method: 'POST',
                 headers: {
                     'accept': 'text/plain',
@@ -60,7 +75,8 @@ const Agentregister =() => {
                     // for toast message successfully
                     var user = await data.json();
                     setSuccess(true);
-                    toast.success('Registered successfully!');
+                    toast.success('register done,Wait for Admin Approval!');
+                    navigat('/login')
                 } else {
                     toast.error('Warning !');
                 }
@@ -72,6 +88,7 @@ const Agentregister =() => {
         <div className="user-register-container">
             <div className="user-register-title">Agent Registration</div>
             <div className="input-container">
+
                 <TextField
                     sx={{
                         width: '350px',
@@ -79,12 +96,13 @@ const Agentregister =() => {
                     }}
                     label="Agency Name"
                     variant="outlined"
-                    value={userDTO.name}
-                    onChange={(event) => setUserDTO({ ...userDTO, name: event.target.value })}
-                    error={!!errors.name}
-                    helperText={errors.name}
+                    value={userDTO.agencyName}
+                    onChange={(event) => setUserDTO({ ...userDTO, agencyName: event.target.value })}
+                    error={!!errors.agencyName}
+                    helperText={errors.agencyName}
                 />
             </div>
+
             <div className="input-container">
                 <TextField
                     sx={{
@@ -139,6 +157,36 @@ const Agentregister =() => {
                     onChange={(event) => setUserDTO({ ...userDTO, password: event.target.value })}
                     error={!!errors.password}
                     helperText={errors.password}
+                />
+            </div>
+            <div className="input-container">
+                <TextField
+                    sx={{
+                        width: '350px'
+                    }}
+                    label="Aadhar Number"
+                    variant="outlined"
+                    value={userDTO.aadharnumber}
+                    onChange={(event) => {
+                        const numericValue = event.target.value.replace(/\D/g, '');
+                        setUserDTO({ ...userDTO, aadharnumber: numericValue });
+                    }}
+                    error={!!errors.aadharnumber}
+                    helperText={errors.aadharnumber}
+                />
+            </div>
+
+            <div className="input-container">
+                <TextField
+                    sx={{
+                        width: '350px'
+                    }}
+                    label="Agency Description"
+                    variant="outlined"
+                    value={userDTO.agencyDescription}
+                    onChange={(event) => setUserDTO({ ...userDTO, agencyDescription: event.target.value })}
+                    error={!!errors.agencyDescription}
+                    helperText={errors.agencyDescription}
                 />
             </div>
             <div className="button-container">

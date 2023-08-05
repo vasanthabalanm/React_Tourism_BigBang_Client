@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '../../images/logo1.png';
+import image1 from '../../images/logo1.png';
 import './AdminIndex.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
-const AdminIndex =()  =>{
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
+const AdminIndex = () => {
     const [showLink, setShowLink] = useState(false);
     const [agent, setAgent] = useState([]);
 
@@ -18,22 +22,22 @@ const AdminIndex =()  =>{
         getAllAgentDetails();
     }, []);
 
-    const PostUser = (agentId,id) => {
-        const approveUrl = `https://localhost:7117/api/TravelAgentRegister/register`;
-    
+    const PostUser = (agentId, id) => {
+        const approveUrl = `https://localhost:7117/api/AdminUser/register`;
+
         const postData = {
             name: agent[agentId].name,
             username: agent[agentId].username,
             email: agent[agentId].email,
             phone: agent[agentId].phone,
-            aadharnumber : agent[agentId].aadharnumber,
+            aadharnumber: agent[agentId].aadharnumber,
             role: 'Agent',
             password: agent[agentId].password
         };
-    
-  
+
+
         console.log('Sending POST request with data:', postData);
-    
+
         axios.post(approveUrl, postData, {
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +66,7 @@ const AdminIndex =()  =>{
             });
     };
     const DeleteAgent = (agentId) => {
-        const deleteUrl = `https://localhost:7117/api/AdminUser?id=${agentId}`;
+        const deleteUrl = `https://localhost:7117/api/TravelAgentRegister?id=${agentId}`;
 
         fetch(deleteUrl, {
             method: 'DELETE',
@@ -112,7 +116,10 @@ const AdminIndex =()  =>{
         <div>
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img className='image-logo' src={Logo} alt="Logo" />
+                    <div className='combine'>
+                        <div><img src={image1} alt="" className='logo' /></div>
+                        <div className="brandname">MakeTrip</div>
+                    </div>
                 </div>
                 <div className={`navbar-toggle ${showLink ? 'active' : ''}`} onClick={toggleLinks}>
                     <span></span>
@@ -122,7 +129,9 @@ const AdminIndex =()  =>{
                 <ul className={`navbar-links ${showLink ? 'active' : ''}`}>
                     <li>Home</li>
                     <li>Image Gallery</li>
-                    <Link to={'/'}><p style={{color:'black'}}>Logout</p></Link>
+                    <li>Logout</li>
+
+                    {/* <Link to={'/'}><p style={{color:'black'}}>Logout</p></Link> */}
                 </ul>
             </nav>
 
@@ -133,15 +142,16 @@ const AdminIndex =()  =>{
                     <div>Available Agencies</div>
                 </div>
                 <h3 className="card-title" style={{ marginLeft: '320px' }}>Agent Approval List</h3>
-                <div className="approvallist">
+                {/* <div className="approvallist">
                     <table className="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Username</th>
-                                <th>Name</th>
                                 <th>Phone Number</th>
                                 <th>Email</th>
-                                {/* <th>Password</th> */}
+                                <th>Aadhar Number</th>
+                                <th>Agency Name</th>
+                                <th>Agency Description</th>
                                 <th>Action</th>
                                 <th>Action</th>
                             </tr>
@@ -151,17 +161,43 @@ const AdminIndex =()  =>{
                                 <tr key={index}>
                                     
                                     <td>{agents.username}</td>
-                                    <td>{agents.name}</td>
                                     <td>{agents.phone}</td>
                                     <td>{agents.email}</td>
-                                    {/* <td>{agents.password}</td> */}
+                                    <td>{agents.aadharnumber}</td>
+                                    <td>{agents.agencyName}</td>
+                                    <td>{agents.agencyDescription}</td>
                                     <td><button onClick={() => PostUser(index,agents.id)}>Accept</button></td>
                                     <td><button onClick={() => DeleteAgent(agents.id)}>Reject</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
+                </div> */}
+                <div className="approvallist" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                    {agent.map((agents, index) =>
+                        <Card sx={{ maxWidth: 345 }}>
+
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" >
+                                    {agents.agencyName}
+                                </Typography>
+                                <Typography gutterBottom variant="h6" color="text.secondary">
+                                    {agents.agencyDescription}
+                                </Typography>
+                                <p>Name:{agents.username}</p>
+                                <p>Phone:{agents.phone}</p>
+                                <p>Email:{agents.email}</p>
+                                <p>Aadhar Number:{agents.aadharnumber}</p>
+                            </CardContent>
+                            <div style={{display:'flex',justifyContent:'space-evenly'}}>
+                            <button className="btn btn-success " onClick={() => PostUser(index, agents.id)}><i className="fas fa-check" style={{color:'white'}}></i></button>
+                            <button className="btn btn-danger " onClick={() => DeleteAgent(agents.id)}><i className="far fa-trash-alt" style={{color:'white'}}></i></button>
+                            </div>
+                            
+                        </Card>
+                    )}
                 </div>
+
             </div>
         </div>
     );
