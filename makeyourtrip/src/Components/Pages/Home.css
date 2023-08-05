@@ -7,6 +7,9 @@
   align-items: center;
 }
 
+.sec1{
+  margin-top: 120px;
+}
 .image1 {
   width: 380px;
   height: 480px;
@@ -14,6 +17,8 @@
 
 .mainhead {
   font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 4px;
   animation-name: slideUp;
   animation-duration: 2s;
 }

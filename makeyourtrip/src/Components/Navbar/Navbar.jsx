@@ -10,7 +10,7 @@ const Navbar =() => {
         setShowbar(!showbar);
     };
   return (
-    <div>
+    <div className=' container topsec'>
         <nav className="navbar">
             <div className="navbar-logo">
                 <div className='combine'>

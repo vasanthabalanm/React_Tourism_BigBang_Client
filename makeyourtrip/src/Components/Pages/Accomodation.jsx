@@ -9,6 +9,7 @@ import cstms from '../../images/custmr.png'
 import planes from '../../images/plane.png'
 import './Accomodation.css'
 
+
 const Accomodation = () => {
     return (
         <div className='thirdsection bg-light'>
