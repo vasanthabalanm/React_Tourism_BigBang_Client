@@ -60,6 +60,7 @@ const OffersPackage = () => {
         <div className='container packs'>
             <div className='cks'>
             <p className='packhead'>Popular offers!</p>
+            <p className='subheadingpackage'>"Book a refreshing trip <span className='clrdente'>and</span> GET SET GO!"</p>
             </div>
             <div className='allpacks'>
                 {/* <Box sx={{ width: '40vw',height:'60vh', background: 'green' }}> */}
@@ -76,8 +77,7 @@ const OffersPackage = () => {
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-
-                        <Carousel>
+                    <Carousel>
                             <Carousel.Item style={{marginLeft:'60px'}}>
                                 <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px', marginTop: '40px' }}>
                                     <CardActionArea style={{color:'black'}}>
@@ -101,7 +101,6 @@ const OffersPackage = () => {
                             </Carousel.Item>
 
                         </Carousel>
-
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
                         Item Two

@@ -52,7 +52,7 @@ const Agentregister = () => {
             newErrors.password = 'Password is required';
         } else if (userDTO.password.length < 8) {
             newErrors.password = 'Password must be at least 8 characters long';
-        } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(userDTO.password)) {
+        } else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~-]/.test(userDTO.password)) {
             newErrors.password = 'Password must contain at least one special character (!@#$%^&*()_+{}[]:;<>,.?~-)';
         }
 

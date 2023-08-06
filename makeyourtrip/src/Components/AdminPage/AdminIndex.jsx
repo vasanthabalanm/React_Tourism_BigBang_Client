@@ -1,12 +1,6 @@
-
-
-
-
 import React, { useEffect, useState } from 'react';
-import image1 from '../../images/logo1.png';
 import './AdminIndex.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import CRUDgallery from '../AdminGallery/CRUDgallery';
 

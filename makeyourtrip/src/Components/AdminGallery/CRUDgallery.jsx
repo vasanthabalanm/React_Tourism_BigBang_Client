@@ -30,7 +30,7 @@ function CRUDgallery() {
   }
 
   const addOrEdit = (formData, onSuccess) => {
-    if (formData.get('adminImgsId') === '0') {
+    if (formData.get('adminImgsId') == '0') {
       crudgalleryapi()
         .create(formData)
         .then(res => {

@@ -7,6 +7,8 @@ import Login from './Components/Login/Login';
 import AdminIndex from './Components/AdminPage/AdminIndex';
 import Agentregister from './Components/AgentRegister/Agentregister';
 import FeedbackForm from './Components/Pages/FeedbackForm';
+import agentmainpage from './Components/AgentPages/AgentMain';
+import CRUDgallery from './Components/AdminGallery/CRUDgallery';
 
 
 function App() {
@@ -20,9 +22,9 @@ function App() {
         <Route path='/adminpage' Component={AdminIndex}/>
         <Route path='/agentregister' Component={Agentregister}/>
         <Route path='/feedback' Component={FeedbackForm}/>
+        <Route path='/agentmainpage' Component={agentmainpage}/>
       </Routes>
-      </BrowserRouter>
-      
+      </BrowserRouter>      
     </div>
   );
 }
