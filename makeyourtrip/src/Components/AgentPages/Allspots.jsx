@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Hotels from './Hotels';
-import './Hotel.css'
+import Spots from './Spots';
 
-const DisplayHotel = () => {
+const Allspots =() => {
 
-    const [hotellist, sethotellist] = useState([]);
+    const [spotlist, setspotlist] = useState([]);
     const [recordForEdit, setRecordForEdit] = useState(null);
 
     useEffect(() => {
-        refreshhotellist();
+        refreshspotlist();
     }, []);
 
-    const hotelapi = (url = 'https://localhost:7117/api/Hotel/') => {
+    const spotapi = (url = 'https://localhost:7117/api/VisitingSpots/') => {
         return {
             fetchAll: () => axios.get(url),
             create: newRecord => axios.post(url, newRecord),
@@ -21,30 +20,30 @@ const DisplayHotel = () => {
         };
     };
 
-    function refreshhotellist() {
-        hotelapi()
+    function refreshspotlist() {
+        spotapi()
             .fetchAll()
             .then(res => {
-                sethotellist(res.data);
+                setspotlist(res.data);
             })
             .catch(err => console.log(err));
     }
 
     const addOrEdit = (formData, onSuccess) => {
-        if (formData.get('hotelId') == '0') {
-            hotelapi()
+        if (formData.get('spotId') == '0') {
+            spotapi()
                 .create(formData)
                 .then(res => {
                     onSuccess();
-                    refreshhotellist();
+                    refreshspotlist();
                 })
                 .catch(err => console.log(err));
         } else {
-            hotelapi()
-                .update(formData.get('hotelId'), formData)
+            spotapi()
+                .update(formData.get('spotId'), formData)
                 .then(res => {
                     onSuccess();
-                    refreshhotellist();
+                    refreshspotlist();
                 })
                 .catch(err => console.log(err));
         }
@@ -57,9 +56,9 @@ const DisplayHotel = () => {
     const onDelete = (e, id) => {
         e.stopPropagation();
         if (window.confirm('Are you sure to delete this record?')) {
-            hotelapi()
+            spotapi()
                 .delete(id)
-                .then(res => refreshhotellist())
+                .then(res => refreshspotlist())
                 .catch(err => console.log(err));
         }
     };
@@ -68,17 +67,12 @@ const DisplayHotel = () => {
         <div className="card getimg" onClick={() => showRecordDetails(data)}>
             <img src={data.imageSrc} className="card-img-top" alt="default images" />
             <div className="card-body">
-                <h5>{data.hotelName}</h5>
-                <p>Id:{data.hotelId}</p>
-                <span className="locationdesc">{data.hotelDescription}</span> <br />
-                <p>Ratings:{data.ratings}</p>
-                <p>Per Person:₹{data.pricePerPerson}</p>
-                <p>Total rooms:{data.hotelRoomsAvailable}</p>
-                <p>Food Type:{data.foodType}</p>
-                <p>Location:{data.hotelLocation}</p>
+                <h5>{data.spotLocation}</h5>
+                <p>Id:{data.spotId}</p>
+                <p>siutable Places:{data.specialtyId}</p>
                 <button
                     className="btn btn-danger"
-                    onClick={e => onDelete(e, parseInt(data.hotelId))}
+                    onClick={e => onDelete(e, parseInt(data.spotId))}
                 >
                     <i className="far fa-trash-alt" style={{ color: 'white' }}></i>
                 </button>
@@ -89,12 +83,12 @@ const DisplayHotel = () => {
     return (
         <div className="centralized">
             <div className="addfetch">
-                <Hotels addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
+                <Spots addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
             </div>
             <div className="editupdate">
                 <table>
                     <tbody>
-                        {hotellist.map((data, i) => (
+                        {spotlist.map((data, i) => (
                             <tr key={i}>
                                 <td>{imageCard(data)}</td>
                             </tr>
@@ -106,4 +100,4 @@ const DisplayHotel = () => {
     );
 }
 
-export default DisplayHotel
+export default Allspots

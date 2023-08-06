@@ -3,7 +3,7 @@ import GalleryImages from './GalleryImages';
 import axios from 'axios';
 import './Gallery.css';
 
-function CRUDgallery() {
+const CRUDgallery =() => {
   const [galleryList, setgalleryList] = useState([]);
   const [recordForEdit, setRecordForEdit] = useState(null);
 
@@ -34,6 +34,8 @@ function CRUDgallery() {
       crudgalleryapi()
         .create(formData)
         .then(res => {
+          console.log()
+
           onSuccess();
           refreshgalleryList();
         })

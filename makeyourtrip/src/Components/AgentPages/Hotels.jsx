@@ -132,23 +132,23 @@ export default function Hotels(props) {
                                 onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <input className={"form-control" + applyErrorClass('hotelName')} placeholder="Hotel Name" name="hotelName"
-                                value={values.hotelName}
+                            <input className={"form-control" + applyErrorClass('pricePerPerson')} placeholder="pricePerPerson " name="pricePerPerson"
+                                value={values.pricePerPerson}
                                 onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <input className={"form-control" + applyErrorClass('hotelName')} placeholder="Hotel Name" name="hotelName"
-                                value={values.hotelName}
+                            <input className={"form-control" + applyErrorClass('hotelRoomsAvailable')} placeholder="hotelRoomsAvailable" name="hotelRoomsAvailable"
+                                value={values.hotelRoomsAvailable}
                                 onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <input className={"form-control" + applyErrorClass('hotelName')} placeholder="Hotel Name" name="hotelName"
-                                value={values.hotelName}
+                            <input className={"form-control" + applyErrorClass('foodType')} placeholder="foodType" name="foodType"
+                                value={values.foodType}
                                 onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <input className={"form-control" + applyErrorClass('hotelName')} placeholder="Hotel Name" name="hotelName"
-                                value={values.hotelName}
+                            <input className={"form-control" + applyErrorClass('hotelLocation')} placeholder="Hotel Location" name="hotelLocation"
+                                value={values.hotelLocation}
                                 onChange={handleInputChange} />
                         </div>
                         <div className="form-group text-center">
@@ -160,6 +160,3 @@ export default function Hotels(props) {
         </div>
     )
 }
-
-
-

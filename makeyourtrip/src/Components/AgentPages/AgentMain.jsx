@@ -18,7 +18,7 @@ const Hotels = () => {
             </div>
             <Card className="container outterbox boxs" sx={{ borderRadius: '20px', boxShadow: '0px 10px 4px 10px rgba(0, 0, 0, 0.25)' }}>
                 <div className='seprte'>
-                    <Link to={'/'}>
+                    <Link to={'/addhotels'}>
                         <Card sx={{ width: '150px', borderStyle: 'none' }}>
                             <img src={ag1} alt="" width={'80px'} height={'80px'} className='optns' />
                             <p className='linknames'>Hotels</p>
@@ -26,24 +26,29 @@ const Hotels = () => {
                     </Link>
                 </div>
                 <div className='seprte'>
-                    <Card sx={{ width: '150px' }}>
-                        <img src={ag2} alt="" width={'80px'} height={'80px'} className='optns' />
-                        <p className='linknames'>Place</p>
-                    </Card>
+                    <Link to={'/agentaddplaces'}>
+                        <Card sx={{ width: '150px' }}>
+                            <img src={ag2} alt="" width={'80px'} height={'80px'} className='optns' />
+                            <p className='linknames'>Place</p>
+                        </Card>
+                    </Link>
                 </div>
                 <div className='seprte'>
-                    <Card sx={{ width: '150px' }}>
-                        <img src={ag3} alt="" width={'80px'} height={'80px'} className='optns' />
-                        <p className='linknames'>Spot</p>
-                    </Card>
+                    <Link to={'/viewallspots'}>
+                        <Card sx={{ width: '150px' }}>
+                            <img src={ag3} alt="" width={'80px'} height={'80px'} className='optns' />
+                            <p className='linknames'>Spot</p>
+                        </Card>
+                    </Link>
                 </div>
                 <div className='seprte'>
+                    <Link to={'/packagedetails'}>
                     <Card sx={{ width: '150px' }}>
                         <img src={ag4} alt="" width={'80px'} height={'80px'} className='optns' />
                         <p className='linknames'>Package</p>
                     </Card>
+                    </Link>
                 </div>
-
             </Card>
         </div>
     )

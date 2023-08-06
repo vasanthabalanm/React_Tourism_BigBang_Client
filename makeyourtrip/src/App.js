@@ -8,7 +8,10 @@ import AdminIndex from './Components/AdminPage/AdminIndex';
 import Agentregister from './Components/AgentRegister/Agentregister';
 import FeedbackForm from './Components/Pages/FeedbackForm';
 import agentmainpage from './Components/AgentPages/AgentMain';
-import CRUDgallery from './Components/AdminGallery/CRUDgallery';
+import DisplayHotel from './Components/AgentPages/DisplayHotel';
+import AllPlaes from './Components/AgentPages/AllPlaes';
+import Allspots from './Components/AgentPages/Allspots';
+import PackageDetails from './Components/AgentPages/PackageDetails';
 
 
 function App() {
@@ -23,6 +26,10 @@ function App() {
         <Route path='/agentregister' Component={Agentregister}/>
         <Route path='/feedback' Component={FeedbackForm}/>
         <Route path='/agentmainpage' Component={agentmainpage}/>
+        <Route path= '/addhotels' Component={DisplayHotel}/>
+        <Route path='/agentaddplaces' Component={AllPlaes}/>
+        <Route path='/viewallspots' Component={Allspots}/>
+        <Route path='/packagedetails' Component={PackageDetails}/>
       </Routes>
       </BrowserRouter>      
     </div>
