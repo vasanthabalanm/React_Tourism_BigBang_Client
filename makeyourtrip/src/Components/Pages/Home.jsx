@@ -5,6 +5,10 @@ import flight from '../../images/flight.png'
 import Navbar from '../Navbar/Navbar'
 import Accomodation from './Accomodation'
 import OffersPackage from './OffersPackage'
+import Footer from '../Footer/Footer'
+import Service from './Service'
+import Allphotos from './Allphotos'
+import Showcase from './Showcase'
 const Home = () => {
   return (
     <div>
@@ -29,6 +33,20 @@ const Home = () => {
 
       {/* accommodations */}
       <Accomodation/>
+      <br/>
+
+      {/* services */}
+      <Service/>
+      <br/>
+
+      {/* testimonals */}
+      <Showcase/>
+      
+      {/* gallery */}
+      <Allphotos/>
+
+      {/* footer */}
+      <Footer/>
     </div>
   )
 }

@@ -34,7 +34,8 @@ const Login = () => {
                 console.log(data)
                 sessionStorage.setItem('accessToken',data.accessToken)
                 sessionStorage.setItem('refreshToken',data.refreshToken);
-                sessionStorage.setItem('role',data.role)
+                sessionStorage.setItem('role',data.role);
+                sessionStorage.setItem('Id',data.Id);
                 // You can handle the authentication token or user data here
                 // For now, let's just display a success toast message
                 toast.success('Login successful!');

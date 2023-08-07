@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';import './Userregister.css'
+import 'react-toastify/dist/ReactToastify.css';
+import './Userregister.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 const Userregister =() =>{

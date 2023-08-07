@@ -64,15 +64,17 @@ const OffersPackage = () => {
             </div>
             <div className='allpacks'>
                 {/* <Box sx={{ width: '40vw',height:'60vh', background: 'green' }}> */}
-                <Box sx={{ width: '40vw',height:'60vh'}}>
+                <Box sx={{ width: '45vw',height:'60vh'}}>
 
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="Item One" {...a11yProps(0)} />
-                            <Tab label="Item Two" {...a11yProps(1)} />
-                            <Tab label="Item Three" {...a11yProps(2)} />
-                            <Tab label="Item four" {...a11yProps(3)} />
-                            <Tab label="Item five" {...a11yProps(4)} />
+                            <Tab label="Holiday" {...a11yProps(0)} />
+                            <Tab label="Devotional" {...a11yProps(1)} />
+                            <Tab label="Adventure" {...a11yProps(2)} />
+                            <Tab label="WildLife" {...a11yProps(3)} />
+                            <Tab label="Culture" {...a11yProps(4)} />
+                            <Tab label="Family" {...a11yProps(5)} />
+
 
                         </Tabs>
                     </Box>

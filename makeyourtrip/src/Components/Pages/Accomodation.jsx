@@ -12,12 +12,11 @@ import './Accomodation.css'
 
 const Accomodation = () => {
     return (
-        <div className='thirdsection bg-light'>
+        <div className=' container-fluid thirdsection bg-light'>
             <div className='accomodationcompo'>
-                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px',marginTop:'40px'}}>
+                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px', marginTop: '40px' }}>
                     <CardActionArea>
                         <CardMedia
-                            className='bg-light'
                             component="img"
                             image={accom1}
                             sx={{ width: '50px', height: '50px', margin: '0 auto', marginTop: '30px' }}
@@ -33,10 +32,9 @@ const Accomodation = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px',marginTop:'40px' }}>
+                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px', marginTop: '40px' }}>
                     <CardActionArea>
                         <CardMedia
-
                             component="img"
                             image={planes}
                             sx={{ width: '50px', height: '50px', margin: '0 auto', marginTop: '30px' }}
@@ -52,10 +50,10 @@ const Accomodation = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px',marginTop:'40px' }}>
+                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px', marginTop: '40px' }}>
                     <CardActionArea>
                         <CardMedia
-
+                            className='bg-light'
                             component="img"
                             image={cstms}
                             sx={{ width: '50px', height: '50px', margin: '0 auto', marginTop: '30px' }}
@@ -71,6 +69,7 @@ const Accomodation = () => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
+
             </div>
         </div>
 

@@ -45,6 +45,7 @@
   position: relative;
   display: flex;
   justify-content: space-evenly;
+  height: 180px;
 
 }
 .optns{
@@ -60,4 +61,13 @@
   font-size: 15px;
   margin: 10px;
   text-align: center;
+}
+.heart-emoji::before {
+  content: "\2764"; /* Unicode code point for the heart emoji */
+  font-family: "Segoe UI Emoji", sans-serif;
+  font-size: 24px;
+}
+.imgcontnt{
+  display: flex;
+  justify-content: space-evenly;
 }

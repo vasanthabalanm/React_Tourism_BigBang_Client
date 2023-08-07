@@ -25,13 +25,10 @@ const Navbar =() => {
             </div>
             <ul className={`navbar-links ${showbar ? 'active' : ''}`}>
                 <li>
-                    Home
+                    <Link to={'/'}><p className="fedbck" style={{color:'black'}}>Home</p></Link>
                 </li>
                 <li>
-                    Services
-                </li>
-                <li>
-                    Packages
+                    <Link to={'/getallpacks'}><p className="fedbck" style={{color:'black'}}>Packages</p></Link>
                 </li>
                 <li>
                     <Link to={'/feedback'}><p className="fedbck" style={{color:'black'}}>Feedback</p></Link>

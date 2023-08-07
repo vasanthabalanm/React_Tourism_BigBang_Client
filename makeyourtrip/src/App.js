@@ -12,6 +12,8 @@ import DisplayHotel from './Components/AgentPages/DisplayHotel';
 import AllPlaes from './Components/AgentPages/AllPlaes';
 import Allspots from './Components/AgentPages/Allspots';
 import PackageDetails from './Components/AgentPages/PackageDetails';
+import ManagePackage from './Components/Pages/ManagePackage';
+import UserBooking from './Components/Booking/UserBooking';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Route path='/agentaddplaces' Component={AllPlaes}/>
         <Route path='/viewallspots' Component={Allspots}/>
         <Route path='/packagedetails' Component={PackageDetails}/>
+        <Route path='/getallpacks' Component={ManagePackage}/>
+        <Route path='/userbooking' Component={UserBooking}/>
       </Routes>
       </BrowserRouter>      
     </div>
