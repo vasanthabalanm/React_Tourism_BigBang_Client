@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -12,6 +12,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import accom1 from '../../images/accomodations.png'
+import axios from 'axios';
 
 
 function CustomTabPanel(props) {
@@ -56,15 +57,38 @@ const OffersPackage = () => {
         setValue(newValue);
     };
 
+
+    const [galleryList, setgalleryList] = useState([]);
+
+    useEffect(() => {
+        refreshgalleryList();
+    }, []);
+
+    const crudgalleryapi = (url = 'https://localhost:7117/api/AdminGallery/') => {
+        return {
+            fetchAll: () => axios.get(url),
+        };
+    };
+
+    function refreshgalleryList() {
+        crudgalleryapi()
+            .fetchAll()
+            .then(res => {
+                setgalleryList(res.data);
+            })
+            .catch(err => console.log(err));
+    }
+
+
     return (
         <div className='container packs'>
             <div className='cks'>
-            <p className='packhead'>Popular offers!</p>
-            <p className='subheadingpackage'>"Book a refreshing trip <span className='clrdente'>and</span> GET SET GO!"</p>
+                <p className='packhead'>Popular offers!</p>
+                <p className='subheadingpackage'>"Book a refreshing trip <span className='clrdente'>and</span> GET SET GO!"</p>
             </div>
             <div className='allpacks'>
                 {/* <Box sx={{ width: '40vw',height:'60vh', background: 'green' }}> */}
-                <Box sx={{ width: '45vw',height:'60vh'}}>
+                <Box sx={{ width: '45vw', height: '60vh' }}>
 
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -79,37 +103,60 @@ const OffersPackage = () => {
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-                    <Carousel>
-                            <Carousel.Item style={{marginLeft:'60px'}}>
-                                <Card className='cardsa' sx={{ maxWidth: 345, boxShadow: '2px 10px 20px 0px', marginTop: '40px' }}>
-                                    <CardActionArea style={{color:'black'}}>
-                                        <CardMedia
-                                            className='bg-light'
-                                            component="img"
-                                            image={accom1}
-                                            sx={{ width: '50px', height: '50px', margin: '0 auto', marginTop: '30px' }}
-                                            alt="maps"
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }}>
-                                                Accommodation
-                                            </Typography>
-                                            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
-                                                "Find top accommodations worldwide. Book hotels, apartments, and more for your perfect stay. Hassle-free booking. Best rates guaranteed."
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                </Card>
-                            </Carousel.Item>
-
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
                         </Carousel>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
-                        Item Two
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={2}>
-                        Item Three
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
                     </CustomTabPanel>
+                    <CustomTabPanel value={value} index={3}>
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </CustomTabPanel>
+                    <CustomTabPanel value={value} index={4}>
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </CustomTabPanel>
+                    <CustomTabPanel value={value} index={5}>
+                        <Carousel fade className='caroslheight'>
+                            {galleryList.map((data, i) => (
+                                <Carousel.Item >
+                                    <img src={data.imageSrc} className="card-img-top" alt="default images" style={{ borderRadius: '30px' }} />
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </CustomTabPanel>
+
                 </Box>
             </div>
         </div>

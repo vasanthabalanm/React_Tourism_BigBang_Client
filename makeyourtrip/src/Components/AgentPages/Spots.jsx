@@ -87,7 +87,7 @@ export default function Spots(props) {
         <div>
             <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
 
-                <div className="card postimg">
+                <div className="card postimg" style={{width:'400px',height:'550px'}}>
                     <div className="container text-center">
                         <p className="lead">Locations</p>
                     </div>

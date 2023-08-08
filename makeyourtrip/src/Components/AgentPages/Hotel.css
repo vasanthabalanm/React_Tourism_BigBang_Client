@@ -27,3 +27,25 @@
     display: flex;
     justify-content: space-evenly;
   }
+  .rect2{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 97%;
+    height: 100vh;
+  }
+  .containersrr {
+    background-image: url('../../images/Hotel/hotel4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+  }
+
+  .breadcrumbs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  

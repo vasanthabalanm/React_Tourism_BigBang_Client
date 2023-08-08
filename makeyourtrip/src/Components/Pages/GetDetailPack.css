@@ -59,7 +59,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: aliceblue;
+    background-color: #FA914B;
     width: 250px;
     padding: 10px;
     text-align: center;
@@ -134,19 +134,19 @@
   }
   
   .Close-button {
-    background-color: #ccc;
-    color: #333;
+    background-color: #FA914B;
+    color: white;
   }
   
   .Book-button {
-    background-color: #007bff;
+    background-color: #FA914B;
     color: white;
   }
 
     
   .Book-button:hover {
-    background-color: #ccc;
-    color: red;
+    background-color: #FA914B;
+    color: white;
   }
 
 
@@ -178,18 +178,18 @@
   }
   
   .Close-button {
-    background-color: #ccc;
-    color: #333;
+    background-color: #FA914B;
+    color: white;
   }
 
 
   .Close-button:hover{
-    background-color: #ccc;
-    color: red;
+    background-color: #FA914B;
+    color: white;
   }
   
   .Book-button {
-    background-color: #007bff;
+    background-color: #FA914B;
     color: white;
   }
   
@@ -197,7 +197,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:aliceblue;
+    background-color:white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -284,7 +284,7 @@
   }
   
   .Package-card button {
-    background-color: #007bff;
+    background-color: #FA914B;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -294,7 +294,7 @@
   }
   
   .Package-card button:hover {
-    background-color: #0056b3;
+    background-color: #FA914B;
   }
   
   /* Media Query for Responsive Design */

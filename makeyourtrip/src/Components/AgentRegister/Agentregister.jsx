@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './AgentRegister.css'
 import { useNavigate } from 'react-router-dom';
+import regs from '../../images/register.svg'
+import image1 from '../../images/logo1.png'
+
 
 
 const Agentregister = () => {
@@ -14,7 +17,7 @@ const Agentregister = () => {
         phone: '',
         aadharnumber: '',
         agencyName: '',
-        role:'TravelAgent',
+        role: 'TravelAgent',
         agencyDescription: ''
     });
     const [success, setSuccess] = useState(false);
@@ -26,20 +29,20 @@ const Agentregister = () => {
         if (!userDTO.agencyName) {
             newErrors.agencyName = 'AgencyName is required';
         }
-        
-         if (!userDTO.aadharnumber) {
+
+        if (!userDTO.aadharnumber) {
             newErrors.aadharnumber = 'AadharNumber is required';
         } else if (!/^\d{12}$/.test(userDTO.aadharnumber)) {
             newErrors.aadharnumber = 'Only 12 numbers are allowed';
         }
-       
+
 
         if (!userDTO.phone) {
             newErrors.phone = 'Phone Number is required';
         } else if (!/^\d{10}$/.test(userDTO.phone)) {
             newErrors.phone = 'Only 10 numbers are allowed';
         }
-        
+
         if (!userDTO.agencyDescription) {
             newErrors.agencyDescription = 'AgencyDescription is required';
         }
@@ -85,117 +88,140 @@ const Agentregister = () => {
     };
 
     return (
-        <div className="user-register-container">
-            <div className="user-register-title">Agent Registration</div>
-            <div className="input-container">
+        <div className='container'>
+            <nav className="navbar position-fixed">
+                <div className="navbar-logo">
+                    <div className='combine'>
+                        <div><img src={image1} alt="" className='logo' /></div>
+                        <div className="brandname">MakeTrip</div>
+                    </div>
+                </div>
 
-                <TextField
-                    sx={{
-                        width: '350px',
-                        fontSize: '18px'
-                    }}
-                    label="Agency Name"
-                    variant="outlined"
-                    value={userDTO.agencyName}
-                    onChange={(event) => setUserDTO({ ...userDTO, agencyName: event.target.value })}
-                    error={!!errors.agencyName}
-                    helperText={errors.agencyName}
-                />
-            </div>
+            </nav>
+        <div className='container'>
+            <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                <div>
+                    <img src={regs} alt="" srcset="" style={{ width: '100%', height: '400px', marginTop: '100px' }} />
 
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    label="Username"
-                    variant="outlined"
-                    value={userDTO.username}
-                    onChange={(event) => setUserDTO({ ...userDTO, username: event.target.value })}
-                    error={!!errors.username}
-                    helperText={errors.username}
-                />
-            </div>
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    label="Email"
-                    variant="outlined"
-                    value={userDTO.email}
-                    onChange={(event) => setUserDTO({ ...userDTO, email: event.target.value })}
-                    error={!!errors.email}
-                    helperText={errors.email}
-                />
-            </div>
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    label="Phone Number"
-                    variant="outlined"
-                    value={userDTO.phone}
-                    onChange={(event) => {
-                        const numericValue = event.target.value.replace(/\D/g, '');
-                        setUserDTO({ ...userDTO, phone: numericValue });
-                    }}
-                    error={!!errors.phone}
-                    helperText={errors.phone}
-                />
-            </div>
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    type="password"
-                    label="Password"
-                    variant="outlined"
-                    value={userDTO.password}
-                    onChange={(event) => setUserDTO({ ...userDTO, password: event.target.value })}
-                    error={!!errors.password}
-                    helperText={errors.password}
-                />
-            </div>
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    label="Aadhar Number"
-                    variant="outlined"
-                    value={userDTO.aadharnumber}
-                    onChange={(event) => {
-                        const numericValue = event.target.value.replace(/\D/g, '');
-                        setUserDTO({ ...userDTO, aadharnumber: numericValue });
-                    }}
-                    error={!!errors.aadharnumber}
-                    helperText={errors.aadharnumber}
-                />
-            </div>
+                </div>
+                <div className='py-4'>
+                    <div className="user-register-container">
+                        <div className="user-register-title">Agent Registration</div>
+                        <div className="input-container">
 
-            <div className="input-container">
-                <TextField
-                    sx={{
-                        width: '350px'
-                    }}
-                    label="Agency Description"
-                    variant="outlined"
-                    value={userDTO.agencyDescription}
-                    onChange={(event) => setUserDTO({ ...userDTO, agencyDescription: event.target.value })}
-                    error={!!errors.agencyDescription}
-                    helperText={errors.agencyDescription}
-                />
+                            <TextField
+                                sx={{
+                                    width: '350px',
+                                    fontSize: '18px'
+                                }}
+                                label="Agency Name"
+                                variant="outlined"
+                                value={userDTO.agencyName}
+                                onChange={(event) => setUserDTO({ ...userDTO, agencyName: event.target.value })}
+                                error={!!errors.agencyName}
+                                helperText={errors.agencyName}
+                            />
+                        </div>
+
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                label="Username"
+                                variant="outlined"
+                                value={userDTO.username}
+                                onChange={(event) => setUserDTO({ ...userDTO, username: event.target.value })}
+                                error={!!errors.username}
+                                helperText={errors.username}
+                            />
+                        </div>
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                label="Email"
+                                variant="outlined"
+                                value={userDTO.email}
+                                onChange={(event) => setUserDTO({ ...userDTO, email: event.target.value })}
+                                error={!!errors.email}
+                                helperText={errors.email}
+                            />
+                        </div>
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                label="Phone Number"
+                                variant="outlined"
+                                value={userDTO.phone}
+                                onChange={(event) => {
+                                    const numericValue = event.target.value.replace(/\D/g, '');
+                                    setUserDTO({ ...userDTO, phone: numericValue });
+                                }}
+                                error={!!errors.phone}
+                                helperText={errors.phone}
+                            />
+                        </div>
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                type="password"
+                                label="Password"
+                                variant="outlined"
+                                value={userDTO.password}
+                                onChange={(event) => setUserDTO({ ...userDTO, password: event.target.value })}
+                                error={!!errors.password}
+                                helperText={errors.password}
+                            />
+                        </div>
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                label="Aadhar Number"
+                                variant="outlined"
+                                value={userDTO.aadharnumber}
+                                onChange={(event) => {
+                                    const numericValue = event.target.value.replace(/\D/g, '');
+                                    setUserDTO({ ...userDTO, aadharnumber: numericValue });
+                                }}
+                                error={!!errors.aadharnumber}
+                                helperText={errors.aadharnumber}
+                            />
+                        </div>
+
+                        <div className="input-container">
+                            <TextField
+                                sx={{
+                                    width: '350px'
+                                }}
+                                label="Agency Description"
+                                variant="outlined"
+                                value={userDTO.agencyDescription}
+                                onChange={(event) => setUserDTO({ ...userDTO, agencyDescription: event.target.value })}
+                                error={!!errors.agencyDescription}
+                                helperText={errors.agencyDescription}
+                            />
+                        </div>
+                        <div className="button-container">
+                            <button variant="contained" style={{background:'#FA914B'}} onClick={register}>
+                                Register
+                            </button>
+                        </div>
+                        {success && <div className="success">Registered successfully!</div>}
+                    </div>
+                </div>
             </div>
-            <div className="button-container">
-                <Button variant="contained" color="primary" onClick={register}>
-                    Register
-                </Button>
-            </div>
-            {success && <div className="success">Registered successfully!</div>}
         </div>
+        </div>
+
+
     );
 }
 

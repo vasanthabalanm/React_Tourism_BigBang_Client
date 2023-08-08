@@ -1,0 +1,21 @@
+.erormsg{
+    height: 100vh;
+}
+.img404{
+    height:300px;
+}
+.chkimg{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.btnerror{
+    background: #FA914B;
+    border: 1px solid #FA914B;
+}
+.btnerror:hover{
+    background: #FA914B;
+    transform: scale(1.1);
+    border: 1px solid #FA914B;
+    transition: 0.1s all;
+}

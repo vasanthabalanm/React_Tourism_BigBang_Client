@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GalleryImages from './GalleryImages';
 import axios from 'axios';
 import './Gallery.css';
+import { FaArrowDown } from 'react-icons/fa';
 
 const CRUDgallery =() => {
   const [galleryList, setgalleryList] = useState([]);
@@ -66,8 +67,8 @@ const CRUDgallery =() => {
   };
 
   const imageCard = data => (
-    <div className="card getimg" onClick={() => showRecordDetails(data)}>
-      <img src={data.imageSrc} className="card-img-top" alt="default images" />
+    <div className="card getimg " onClick={() => showRecordDetails(data)}>
+      <img src={data.imageSrc}  alt="default images" style={{width:'100%',height:'500px'}}/>
       <div className="card-body">
         <h5>{data.locationName}</h5>
         <span className="locationdesc">{data.locationdescription}</span> <br />
@@ -82,11 +83,17 @@ const CRUDgallery =() => {
   );
 
   return (
-    <div className="row">
-      <div className="col-md-4">
+    <div className="container ">
+      <div className='imgf'>
+        <div>
         <GalleryImages addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
+
+        </div>
+        <div >
+            <p style={{position:'fixed'}} ><FaArrowDown/>scroll to see all images and edit!</p>
+        </div>
       </div>
-      <div className="col">
+      <div>
         <table>
           <tbody>
             {galleryList.map((data, i) => (

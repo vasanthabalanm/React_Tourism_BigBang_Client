@@ -36,6 +36,11 @@ input[type="password"]:focus {
     margin-top: 20px;
 }
 
+.btncntr{
+    
+    display: flex;
+    justify-content: space-between;
+}
 /* button {
     padding: 12px 24px;
     font-size: 16px;
@@ -56,6 +61,10 @@ input[type="password"]:focus {
     margin-top: -4px;
 }
 
+.loginpgs{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
 .toastify-container {

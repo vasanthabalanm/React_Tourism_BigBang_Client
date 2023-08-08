@@ -86,7 +86,7 @@ export default function GalleryImages(props) {
     const applyErrorClass = field => ((field in errors && errors[field] === false) ? ' invalid-field' : '')
 
     return (
-        <div>
+        <div className='container shoecrdimg'>
 
             <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
 
@@ -105,11 +105,6 @@ export default function GalleryImages(props) {
                                 value={values.locationName}
                                 onChange={handleInputChange} />
                         </div>
-                        {/* <div className="form-group">
-                            <input type='textarea' className="form-control" placeholder="Location Description" name="locationdescription"
-                                value={values.locationdescription}
-                                onChange={handleInputChange} />
-                        </div> */}
                         <div className="form-group">
                             <textarea
                                 className="form-control"

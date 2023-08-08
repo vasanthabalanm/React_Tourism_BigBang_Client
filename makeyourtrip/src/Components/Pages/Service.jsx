@@ -34,7 +34,7 @@ const Service =() => {
               </div>
               <div className="faclt1">
                 <div className="card-body py-4">
-                  <h5 className="card-title">Personalized matching</h5>
+                  <h5 className="card-title">Wide variety Tours</h5>
                   <p className="card-text" style={{ fontSize: '14px', color: 'gray' }}>Say goodbye to generic travel planning. Our service is designed to cater to your individual tastes, ensuring that every moment of your journey.</p>
                 </div>
               </div>
@@ -48,7 +48,7 @@ const Service =() => {
               </div>
               <div className="faclt1">
                 <div className="card-body py-4">
-                  <h5 className="card-title">Personalized matching</h5>
+                  <h5 className="card-title">High quality Service</h5>
                   <p className="card-text" style={{ fontSize: '14px', color: 'gray' }}>Say goodbye to generic travel planning. Our service is designed to cater to your individual tastes, ensuring that every moment of your journey.</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const Service =() => {
               </div>
               <div className="faclt1">
                 <div className="card-body py-4">
-                  <h5 className="card-title">Personalized matching</h5>
+                  <h5 className="card-title">24/7 Support</h5>
                   <p className="card-text" style={{ fontSize: '14px', color: 'gray' }}>Say goodbye to generic travel planning. Our service is designed to cater to your individual tastes, ensuring that every moment of your journey.</p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const Service =() => {
               </div>
               <div className="faclt1">
                 <div className="card-body py-4">
-                  <h5 className="card-title">Personalized matching</h5>
+                  <h5 className="card-title">Handpicked hotels</h5>
                   <p className="card-text" style={{ fontSize: '14px', color: 'gray' }}>Say goodbye to generic travel planning. Our service is designed to cater to your individual tastes, ensuring that every moment of your journey.</p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Service =() => {
               </div>
               <div className="faclt1">
                 <div className="card-body py-4">
-                  <h5 className="card-title">Personalized matching</h5>
+                  <h5 className="card-title">Best Price</h5>
                   <p className="card-text" style={{ fontSize: '14px', color: 'gray' }}>Say goodbye to generic travel planning. Our service is designed to cater to your individual tastes, ensuring that every moment of your journey.</p>
                 </div>
               </div>

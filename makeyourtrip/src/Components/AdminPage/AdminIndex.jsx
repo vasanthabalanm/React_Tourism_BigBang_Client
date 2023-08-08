@@ -12,6 +12,9 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import image1 from '../../images/logo1.png'
+import { Link } from 'react-router-dom';
+import { FaHome, FaUnlock } from 'react-icons/fa';
 
 
 function TabPanel(props) {
@@ -217,9 +220,19 @@ const AdminIndex = () => {
             });
     };
 
+    
+    const Logout =()=>{
+        sessionStorage.removeItem('accessToken')
+        sessionStorage.removeItem('refreshToken')
+        sessionStorage.removeItem('role')
+        sessionStorage.removeItem('id')
+
+    }
+
+
     return (
         <div>
-            {/* <nav className="navbar">
+            <nav className="navbar">
                 <div className="navbar-logo">
                     <div className='combine'>
                         <div><img src={image1} alt="" className='logo' /></div>
@@ -232,13 +245,16 @@ const AdminIndex = () => {
                     <span></span>
                 </div>
                 <ul className={`navbar-links ${showLink ? 'active' : ''}`}>
-                    <li>Home</li>
-                    <li>Image Gallery</li>
-                    <li>Logout</li>
-
-                    // <Link to={'/'}><p style={{color:'black'}}>Logout</p></Link> 
+                    <li>
+                        <Link to={'/'}><p className="fedbck" style={{ color: 'black' }}><FaHome/> Home</p></Link>
+                    </li>
+                   
+                    <li>
+                        <Link to={'/login'}><button className='login'onClick={Logout}><FaUnlock/> Logout</button></Link>
+                    </li>
                 </ul>
-            </nav> */}
+
+            </nav>
             <div className='totaldiv'>
                 <Box >
                     <div className='leftnav'>
@@ -259,9 +275,10 @@ const AdminIndex = () => {
                     <div>Add Images</div>
                     <div>Available Agencies</div> */}
                     </div>
-                    <h3 className="card-title" style={{ marginLeft: '320px' }}>Agent Approval List</h3>
 
                     <TabPanel value={value} index={0}>
+                    <h3 className="card-title" style={{ marginLeft: '320px' }}>Agent Approval List</h3>
+
                         <div className="approvallist" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                             {agent.map((agents, index) =>
                                 <Card sx={{ maxWidth: 345 }}>
@@ -289,9 +306,13 @@ const AdminIndex = () => {
 
                     </TabPanel>
                     <TabPanel value={value} index={2} style={{ marginLeft: '320px' }}>
+                    <h3 className="card-title" style={{ marginLeft: '320px' }}>Image Gallery</h3>
+
                         <CRUDgallery />
                     </TabPanel>
                     <TabPanel value={value} index={4}>
+                    <h3 className="card-title" style={{ marginLeft: '320px' }}>Agent Approved List</h3>
+
                         <div className="approvallist" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                             {approvedagent.map((approvedagents, index) =>
                                 <Card sx={{ maxWidth: 345 }}>

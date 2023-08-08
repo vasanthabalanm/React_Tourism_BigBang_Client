@@ -52,6 +52,16 @@
     margin-top: 10px;
   }
   
+  .usrdregs{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .btnhdctr{
+    display: flex;
+    justify-content: space-evenly;
+  }
+ 
   @media (max-width: 600px) {
     .user-register-container {
       max-width: 90%;
